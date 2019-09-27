@@ -1,4 +1,12 @@
 <h3>チャットルーム 編集</h3>
+<%= form_with model: @room, local: true do |form| %>
+  <div class="field">
+    <%= form.label :name, '部屋名' %>
+    <%= form.text_field :name %>
+  </div>
 
-<%= render 'form', room: @room%>
+  <div class="actions">
+    <%= form.submit '送信' %>
+  </div>
+<% end %>
 <%= link_to '戻る', root_path%>
