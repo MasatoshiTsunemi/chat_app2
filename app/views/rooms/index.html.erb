@@ -1,0 +1,10 @@
+<h2>Chat_Appへようこそ</h2>
+<div>
+  <ul>
+    <% @rooms.each do |room| %>
+      <li><%= link_to "#{room.name}", room_path(room) %>
+      <%= link_to "削除", room_path(room), method: :delete %></li>
+    <% end %>
+  </ul>
+  <%= link_to "新規作成", new_room_path %>
+</div>

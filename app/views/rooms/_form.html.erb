@@ -1,0 +1,10 @@
+<%= form_with url: @rooms do |form| %>
+  <div class="field">
+    <%= form.label :name, '部屋名' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '送信' %>
+  </div>
+<% end %>
