@@ -1,27 +1,48 @@
-<h2>Chat_Appへようこそ</h2>
-<h3>ログイン</h3>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :ユーザ名 %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <%# <%= link_to "読書記録管理", home_path, class:"navbar-brand" %>
+      <div class="h2 text-white">Masatoshi☆恒見の恋愛相談の部屋</div>
+      <ul class="nav">
+        <li>
+            <% unless user_signed_in? %>
+            <%= link_to 'サインアップ', new_user_registration_path, class:"btn btn-primary text-white my-2 my-sm-0"%>
+            <% end %>
+        </li>
+      </ul>
     </div>
-  <% end %>
+  </nav>
+</header>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+
+<div class="container">
+  <div class="">
+    <h2 class="text-center display-4">Chat Appへようこそ</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-signin'}) do |f| %>
+      <h1 class="h3 mb-3 font-weight-normal text-center">ログイン</h1>
+      <div class="field form-group ">
+        <%= f.label :ユーザ名, class:"form-label col-form-label col-form-label-lg"%><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control form-control-lg" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :パスワード, class:"form-label col-form-label col-form-label-lg" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control form-control-lg"%>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field form-group text-center">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+
+      <%= render "devise/shared/links"%>
+    <% end %>
+
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
