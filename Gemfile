@@ -3,11 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.5'
 
-gem 'therubyracer'
+# gem 'therubyracer'
 
 gem 'devise'
 
 gem 'jquery-rails'
+
+gem 'wdm', '~> 0.1.0'
+
+gem 'rb-readline', '~> 0.5.0', :require => false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
