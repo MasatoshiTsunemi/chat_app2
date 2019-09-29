@@ -1,4 +1,3 @@
-<div class="message" id="messages">
-  <% puts "message:#{message}"%>
+<div class="message">
   <p><%= User.find_by(id: message.user_id).username %>:<%= "#{message.content}" %></p>
 </div>

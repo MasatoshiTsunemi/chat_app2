@@ -5,16 +5,12 @@ document.addEventListener 'turbolinks:load', ->
     disconnected: ->
 
     received: (data) ->
-      console.log("recieved")
-      console.log(data)
       $('#messages').append data['message']
 
     speak: (message)->
-      console.log("message")
-      console.log(message)
       @perform 'speak', message: message
 
-  $(document).on 'keypress', '[data-behavior=room_speaker]', (event) ->
+  $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
     if event.keyCode is 13 # return = send
       App.room.speak event.target.value
       event.target.value = ''
