@@ -9,11 +9,9 @@ gem 'devise'
 
 gem 'jquery-rails'
 
-<<<<<<< HEAD
-gem 'wdm', '~> 0.1.0'
+# gem 'wdm', '~> 0.1.0'
 
 gem 'rb-readline', '~> 0.5.0', :require => false
-=======
 gem 'bootstrap', '~> 4.1.1'
 
 # pry
@@ -23,7 +21,6 @@ gem 'pry-stack_explorer' # スタックをたどれる
 gem 'pry-byebug', '~>3.3'
 
 
->>>>>>> modify_room_update
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
