@@ -21,9 +21,7 @@ class RoomsController < ApplicationController
   def create
     puts
     @room = Room.new(name: params[:room][:name])
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    puts params
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
     if @room.save
       redirect_to root_path, notice: "新たな部屋を作成しました"
     else

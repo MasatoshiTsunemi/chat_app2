@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # post 'rooms/create' => 'rooms#create'
   # post 'rooms/:id/update' => 'rooms#update'
   resources :rooms
+  post 'rooms/:id/edit' => 'rooms#edit'
   # delete 'rooms/:id/destroy' => 'rooms#destroy'
   devise_for :users
   root 'rooms#index'
