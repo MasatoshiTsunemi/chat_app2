@@ -30,12 +30,15 @@ class RoomsController < ApplicationController
   end
 
   def edit
+
     @room = Room.find_by(id: params[:id])
   end
 
   def update
+    # binding.pry
     @room = Room.find_by(id: params[:id])
-    @room.assign_attributes(name: params[:name])
+    # @room.assign_attributes(name: params[:name])
+    @room.name = params[:room][:name]
     if @room.save
       redirect_to root_path, notice: "部屋名を変更しました"
     else

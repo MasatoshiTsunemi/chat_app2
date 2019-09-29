@@ -11,6 +11,14 @@ gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.1.1'
 
+# pry
+gem 'pry-rails' # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+gem 'pry-doc' # methodを表示
+gem 'pry-stack_explorer' # スタックをたどれる
+gem 'pry-byebug', '~>3.3'
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
