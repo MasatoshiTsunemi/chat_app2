@@ -8,13 +8,16 @@ module ApplicationCable
 
     private
 
+    # def find_verified_user
+    #   verified_user = User.find_by(id: cookies.signed["user.id"])
+    #   if verified_user && cookies.signed['user.expires_at'] > Time.now
+    #   verified_user
+    #   else
+    #   reject_unauthorized_connection
+    #   end
+    # end
     def find_verified_user
-      verified_user = User.find_by(id: cookies.signed["user.id"])
-      if verified_user && cookies.signed['user.expires_at'] > Time.now
-      verified_user
-      else
-      reject_unauthorized_connection
-      end
-    end
+      (current_user = env['warden'].user) ? current_user : reject_unauthorized_connection
+   end
   end
 end
